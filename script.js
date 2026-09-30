@@ -1,3 +1,5 @@
+
+
 async function hamtaProdukter() {
     try {
         const response = await fetch("produkter.json");
@@ -7,18 +9,24 @@ async function hamtaProdukter() {
         }
 
         const data = await response.json();
-        let container = document.getElementById("produkter");
+     
 
         data.produkter.forEach(produkt => {
             let kort = document.createElement("div");
             kort.innerHTML = `
             <img src="${produkt.bild}" alt="${produkt.namn}">
-            <h2>${produkt.namn}</h2>
+            <h3>${produkt.namn}</h3>
             <p>${produkt.beskrivning}</p>
-            <p>${produkt.pris} kr</p>
-            <p>${produkt.typ}</p>
+            <p class="pris">${produkt.pris} kr</p>
+            
             `;
-            container.appendChild(kort);
+
+            if (produkt.typ === "datorkomponent") {
+                document.getElementById("produkt-komponenter").appendChild(kort);
+            } else if (produkt.typ === "datortillbehör") {
+                document.getElementById("produkt-tillbehor").appendChild(kort);
+            }
+           
         });
 
         
