@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikelsida</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> <!--kopplar ihop JS filen med html filen, lägger den högst upp med defer så att dom laddas parallellt.--> 
+    <link rel="stylesheet" href="style.css"> <!-- kopplar ihop css filen med html filen--> 
 </head>
 
 <body>
     <header>
-        <nav>
-            <h1>Produktkatalog</h1>
-            <a href="#komponenter">Datorkomponenter</a>
+        <h1>Produktkatalog</h1>
+        <!--Skapar en navigering för mina produkter.-->
+        <nav> 
+            <a href="#komponenter">Datorkomponenter</a> 
             <a href="#tillbehor">Datortillbehör</a>
         </nav>
     </header>
 
+    <!--Skapar rubriker för min produkter och delar in dom i 2 eftersom jag har två olika produktyper. Lägger dom i divar
+    så att det hamnar i 2 olika lådor. Kopplar sedan ihop id & class med JS filen och CSS filen-->
     <h2 id="komponenter" class="rubrik">Datorkomponenter</h2>
     <div id="produkt-komponenter"></div>
 
