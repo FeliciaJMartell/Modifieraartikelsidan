@@ -14,6 +14,9 @@ h1, h2, h3 {
     margin: 0;
 }
 
+/* Tyckte att menyn skulle följa med när man skrollar och valde då sticky. Valde top: 0, så att det fastnar direkt, vilket gör att om jag
+t.ex. är 1px från toppen så är den fortfarande lös. 
+Använder bakgrundsfärg så att det inte blir genomskinligt och z index så att det ligger ovanpå hemsidan hela tiden.*/
 header {
     position: sticky;
     top: 0;
@@ -43,17 +46,23 @@ h1 {
     text-align: center;
 }
 
+/*Gör en bakgrund om man tar musen över länkarna i navigeringen. Detta gäller dock alla länkar om jag framöver skulle skaffa fler länkar.*/
+
 a:hover {
     background-color: rgb(190, 182, 190);
 }
 
-#produkt-komponenter,
+/* använder display flex & flex-direction column för att få det staplat på mobil & med ett mellanrum på 25 pixlar. 
+Egentligen hade jag inte behövt flexen, men vissa äldre webbläsare stödjer inte gap utan flexen. */
+#produkt-komponenter, 
 #produkt-tillbehor {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
+/* fixar så att bilderna blir lika stora & använder object-fit så att de inte trycks ihop. 
+Bilder är inline-element som text och skapar då ett litet mellanrum längst ner under bilden, detta vill jag inte ha och lägger då display block*/
 #produkt-komponenter img,
 #produkt-tillbehor img {
     width: 100%;
@@ -62,6 +71,9 @@ a:hover {
     display: block;
 }
 
+/* I min JS fil så skapade jag en div, vilket gjorde att de fick en storlek som inte passade mobilskärmen. 
+Texten hamnade då utanför på mobil & jag behövde skrolla för att kunna läsa hela texten. 
+Detta korrigerade jag genom att ge mina divar från JS filen bestämda storlekar. */
 #produkt-komponenter > div,
 #produkt-tillbehor > div {
     width: 100%;
@@ -80,6 +92,9 @@ h3 {
     margin: 0.3rem;
 }
 
+
+/* Eftersom jag bygger min CSS utefter en mobil så behöver jag korrigera lite om skärmstorleken blir större. 
+Här är storleken för t.ex. en iPad. Jag valde att skapa en grid och 2 artiklar i varje rad, jag ändrade även lite stolekar på text osv. */
 @media (min-width: 768px) {
 
     #produkt-komponenter,
@@ -113,6 +128,8 @@ h3 {
 
 }
 
+/* Här är storlek på en vanlig datorskärm, allting ärvs nedåt hela tiden och man behöver således bara skriva in förändringar. Jag ansåg inte 
+att jag behövde större textstorlek eller något på min datorskärm, utan tyckte det räckte med att få 3 artiklar i rad istället. */
 @media (min-width: 1200px) {
 
     #produkt-komponenter,
