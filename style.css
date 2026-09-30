@@ -16,7 +16,7 @@ h1, h2, h3 {
 
 /* Tyckte att menyn skulle följa med när man skrollar och valde då sticky. Valde top: 0, så att det fastnar direkt, vilket gör att om jag
 t.ex. är 1px från toppen så är den fortfarande lös. 
-Använder bakgrundsfärg så att det inte blir genomskinligt och z index så att det ligger ovanpå hemsidan hela tiden.*/
+Använder bakgrundsfärgen whitesmoke så att det inte blir genomskinligt och z index så att det ligger ovanpå hemsidan hela tiden.*/
 header {
     position: sticky;
     top: 0;
